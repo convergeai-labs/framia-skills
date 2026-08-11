@@ -1,5 +1,9 @@
 # framia-skills
 
+**中文** | [English](README_EN.md)
+
+![banner](assets/readme-banner.png)
+
 让 AI Agent(Claude Code / Codex 等)帮你在 [Framia](https://framia.pro) 上完成创意视频创作的 Agent Skill 集合。
 
 每个 Skill 都是一套经过真实项目验证的工作流:storyboard 先行、浏览器自动化操作 Framia 画布与编辑器、本地 ffmpeg 确定性精修、独立审计门禁——把"让 Agent 做视频"从碰运气变成可复现的管线。
