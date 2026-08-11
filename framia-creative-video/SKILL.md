@@ -7,6 +7,8 @@ description: Create a new Framia (framia.pro) creative short video from scratch 
 
 从零创建一支 Framia 创意短视频的完整管线。来自多个真实项目、十余轮迭代的实战沉淀(人物剧情片、产品推广短片、抖音竖屏爆款方向)。
 
+与姐妹 skill 的分工:**本 skill 负责"新创作"**;[`framia-video-project-ops`](../framia-video-project-ops/) 负责已有项目的审计/修复/优化(验收矩阵、调试模式、证据纪律)。
+
 ## Read on demand
 
 - 写 storyboard 前读 [references/storyboard-template.md](references/storyboard-template.md)。

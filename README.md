@@ -9,20 +9,20 @@
 | Skill | 状态 | 说明 |
 |---|---|---|
 | [`framia-creative-video`](framia-creative-video/) | ✅ 已发布 | 从 brief 到出片:storyboard → 画布生成(模型路由)→ 编辑器排片导出 → 本地精修 → 审计门禁 |
-| `framia-video-project-ops` | 🚧 规划中 | 已有 Framia 项目的审计、修复与优化 |
+| [`framia-video-project-ops`](framia-video-project-ops/) | ✅ 已发布 | 已有 Framia 项目的审计、修复与优化:双证据车道、验收矩阵、调试模式、有界优化轮次 |
 
 仓库会持续增加新的 Framia 相关 Skill,每个 Skill 一个顶层目录,自带 `SKILL.md` 与所需 references/scripts。
 
 ## 安装
 
-以 `framia-creative-video` 为例:
-
 ```bash
-# Claude Code
+# Claude Code(二选一或都装)
 cp -r framia-creative-video ~/.claude/skills/
+cp -r framia-video-project-ops ~/.claude/skills/
 
 # Codex
 cp -r framia-creative-video ~/.codex/skills/
+cp -r framia-video-project-ops ~/.codex/skills/
 ```
 
 然后在对话中直接说"用 Framia 做一条创意短视频"即可触发。

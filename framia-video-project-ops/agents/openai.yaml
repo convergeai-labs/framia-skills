@@ -1,0 +1,4 @@
+interface:
+  display_name: "Framia Video Project Ops"
+  short_description: "Audit and optimize Framia video workflows"
+  default_prompt: "Use $framia-video-project-ops to audit and improve this Framia video project with browser and MCP evidence."
