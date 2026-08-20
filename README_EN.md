@@ -4,43 +4,62 @@
 
 ![banner](assets/readme-banner.png)
 
-A collection of agent skills that let AI agents (Claude Code, Codex, etc.) create videos for you on [Framia](https://framia.pro).
+<p>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0ea5b7" alt="MIT"></a>
+  <a href="https://framia.pro"><img src="https://img.shields.io/badge/built%20for-Framia-e0218a" alt="Framia"></a>
+  <img src="https://img.shields.io/badge/skills-2-f5c518" alt="2 skills">
+</p>
 
-Each skill is a workflow validated on real projects: storyboard-first design, browser-automated operation of the Framia canvas and editor, deterministic local ffmpeg finishing, and independent audit gates — turning "let an agent make a video" from a gamble into a reproducible pipeline.
+**Let AI agents make videos for you on [Framia](https://framia.pro) — from one sentence to final cut, every step reproducible.**
+
+This is not a "write me a prompt" toy. It's a **complete production pipeline** battle-tested over a dozen iterations on real projects: storyboard gates, model routing, browser-automated canvas operation, deterministic ffmpeg finishing, and independent audits. The agent executes; you make decisions and review.
+
+![pipeline](assets/readme-pipeline.png)
+
+## What these skills save you from
+
+- 🔥 **"The agent said it's done" ≠ done** — the editor AI hallucinates assembly (claims 5 clips placed; actually the same clip ×5). The skills enforce export + ffprobe + contact sheet as the only acceptance.
+- 💸 **Burning credits without a target** — no generation before storyboard approval; probe-first, retry breakers, and budget guardrails built in.
+- 🎭 **Stale platform assumptions** — plan gates and the model catalog can flip within a week (Kling 3.0 moved from Free to Basic+ mid-project, observed). The skills teach probe-first on every session.
+- 🎬 **Beautiful-but-empty montage** — the "can a stranger understand it on mute" test plus a story-carries-the-selling-point methodology, distilled from public promo teardowns.
+- 🔤 **Generated text always breaks** — all text goes through a deterministic local SVG → transparent PNG → time-windowed overlay pipeline.
 
 ## Skills
 
-| Skill | Status | Description |
-|---|---|---|
-| [`framia-creative-video`](framia-creative-video/) | ✅ Released | From brief to final cut: storyboard → canvas generation (model routing) → editor assembly & export → local finishing → audit gates |
-| [`framia-video-project-ops`](framia-video-project-ops/) | ✅ Released | Audit, repair and optimize existing Framia projects: two evidence lanes, acceptance matrix, debugging patterns, bounded optimization rounds |
+| Skill | Description |
+|---|---|
+| [`framia-creative-video`](framia-creative-video/) | **Brief to final cut**: storyboard → canvas generation (model routing / failure taxonomy) → editor assembly & export → local finishing → audit gates |
+| [`framia-video-project-ops`](framia-video-project-ops/) | **Audit & repair existing projects**: two evidence lanes, effect acceptance matrix, debugging patterns (empty timeline / export 404 / render timeout), bounded optimization rounds |
 
-More Framia skills will be added over time. Each skill lives in its own top-level directory with its `SKILL.md` and required references/scripts.
+Each skill lives in its own top-level directory with `SKILL.md` + references + scripts. More Framia skills are coming.
 
-## Install
+## Up and running in 60 seconds
 
 ```bash
-# Claude Code (install either or both)
-cp -r framia-creative-video ~/.claude/skills/
-cp -r framia-video-project-ops ~/.claude/skills/
+git clone https://github.com/convergeai-labs/framia-skills.git
+cd framia-skills
+
+# Claude Code
+cp -r framia-creative-video framia-video-project-ops ~/.claude/skills/
 
 # Codex
-cp -r framia-creative-video ~/.codex/skills/
-cp -r framia-video-project-ops ~/.codex/skills/
+cp -r framia-creative-video framia-video-project-ops ~/.codex/skills/
 ```
 
-Then just say "make a creative short video with Framia" in your conversation to trigger the skill.
+Then just say: **"Make me a creative short video with Framia"** — the agent will show you a storyboard first, and won't touch credits until you approve.
 
 ## Prerequisites
 
-- A Framia account (the Free tier can generate; downloading/exporting requires a paid plan — details inside the skills);
-- `ffmpeg` / `ffprobe` installed locally;
-- Browser automation (Playwright MCP for Claude Code, or the Codex equivalent) to operate the Framia web app;
-- Optional: headless Chrome (for rasterizing SVG title cards into transparent PNGs).
+- A Framia account (Free tier can generate and download node outputs; some models require Basic+ — live probe method included);
+- `ffmpeg` / `ffprobe` locally;
+- Browser automation (Playwright MCP for Claude Code, or the Codex equivalent);
+- Optional: headless Chrome (for SVG caption card rendering).
 
-## Examples
+## Proof it works
 
-Real works created with these skills live in the companion repository: [convergeai-labs/framia-examples](https://github.com/convergeai-labs/framia-examples).
+Real videos produced with these skills — final cuts, storyboards, prompts, and pitfall logs all public:
+
+👉 **[convergeai-labs/framia-examples](https://github.com/convergeai-labs/framia-examples)** — including a complete case produced at zero cost on the Free plan.
 
 ## License
 
